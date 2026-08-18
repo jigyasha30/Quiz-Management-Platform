@@ -316,7 +316,6 @@ function Dashboard() {
     0
   );
 
-  // Prevent unused-variable warning if time is not displayed yet.
   void totalTimeSpent;
 
   // =========================================================
@@ -439,13 +438,11 @@ function Dashboard() {
     try {
       setError("");
 
-      // Clear previous quiz state
       localStorage.removeItem("quizResult");
       localStorage.removeItem("currentQuestionIndex");
       localStorage.removeItem("questionTimeLeft");
       localStorage.removeItem("quizAnswers");
 
-      // Create new attempt
       const response = await API.post(
         `/attempts/start/${quiz._id}`
       );
@@ -460,7 +457,6 @@ function Dashboard() {
         );
       }
 
-      // Get question count
       const questionCount = Array.isArray(
         quiz.questions
       )
@@ -472,11 +468,9 @@ function Dashboard() {
               0
           );
 
-      // Get duration
       const duration =
         Number(quiz.duration) || 20;
 
-      // Save selected quiz
       const selectedQuiz = {
         id: quiz._id,
         _id: quiz._id,
@@ -511,25 +505,21 @@ function Dashboard() {
         JSON.stringify(selectedQuiz)
       );
 
-      // Save current attempt
       localStorage.setItem(
         "currentAttempt",
         JSON.stringify(attempt)
       );
 
-      // Reset question index
       localStorage.setItem(
         "currentQuestionIndex",
         "0"
       );
 
-      // Reset answers
       localStorage.setItem(
         "quizAnswers",
         JSON.stringify({})
       );
 
-      // Start quiz
       navigate("/quiz");
     } catch (error) {
       console.error(
@@ -620,10 +610,12 @@ function Dashboard() {
                 Browse Quizzes
               </Link>
 
+              {/* Analytics appears only once */}
               <Link to="/analytics">
                 Analytics
               </Link>
 
+              {/* Categories appears only once */}
               <Link to="/admin/categories">
                 Categories
               </Link>
@@ -638,23 +630,11 @@ function Dashboard() {
 
             </nav>
 
+            {/* HEADER ACTIONS */}
+
             <div className="admin-header-actions">
 
-              <Link
-                to="/analytics"
-                className="header-create-btn"
-              >
-                <FaChartLine />
-                Analytics
-              </Link>
-
-              <Link
-                to="/admin/categories"
-                className="header-create-btn"
-              >
-                <FaTags />
-                Categories
-              </Link>
+              {/* Only Create Quiz and Logout remain here */}
 
               <Link
                 to="/admin/quizzes"
@@ -1581,8 +1561,6 @@ function Dashboard() {
 
         <section className="dashboard-stats">
 
-          {/* COMPLETED */}
-
           <div className="dashboard-stat-card">
 
             <div className="stat-icon completed">
@@ -1606,8 +1584,6 @@ function Dashboard() {
             </div>
 
           </div>
-
-          {/* AVERAGE */}
 
           <div className="dashboard-stat-card">
 
@@ -1633,8 +1609,6 @@ function Dashboard() {
 
           </div>
 
-          {/* HIGHEST */}
-
           <div className="dashboard-stat-card">
 
             <div className="stat-icon time">
@@ -1659,8 +1633,6 @@ function Dashboard() {
 
           </div>
 
-          {/* PASSED */}
-
           <div className="dashboard-stat-card">
 
             <div className="stat-icon passed">
@@ -1684,8 +1656,6 @@ function Dashboard() {
             </div>
 
           </div>
-
-          {/* QUESTIONS ANSWERED */}
 
           <div className="dashboard-stat-card">
 
