@@ -1,0 +1,1004 @@
+/* =========================================================
+   QUIZMASTER ADMIN QUIZ
+   BROWN + CREAM THEME
+   ========================================================= */
+
+.admin-quiz-page {
+  min-height: 100vh;
+  background: #f7f0e5;
+  color: #3f2d20;
+  padding-bottom: 70px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-quiz-header {
+  min-height: 230px;
+  padding: 35px 7%;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4a3425 0%,
+      #624734 55%,
+      #745541 100%
+    );
+
+  color: #fffaf2;
+}
+
+.admin-quiz-header::before {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background: rgba(255, 239, 213, 0.07);
+  top: -190px;
+  right: 7%;
+}
+
+.admin-quiz-header::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(226, 198, 163, 0.08);
+  bottom: -170px;
+  left: 30%;
+}
+
+.admin-back-btn {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(255, 250, 242, 0.25);
+  border-radius: 10px;
+
+  background: rgba(255, 250, 242, 0.09);
+
+  color: #fffaf2;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.admin-back-btn:hover {
+  background: rgba(255, 250, 242, 0.17);
+  border-color: rgba(255, 250, 242, 0.4);
+  transform: translateX(-3px);
+}
+
+.admin-quiz-header > div {
+  position: relative;
+  z-index: 2;
+}
+
+.admin-quiz-header span {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #e6c9a8;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.admin-quiz-header h1 {
+  margin: 0;
+
+  color: #fffaf2;
+
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.admin-quiz-container {
+  width: min(1120px, calc(100% - 40px));
+
+  margin: -38px auto 0;
+
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.admin-message {
+  margin-bottom: 20px;
+
+  padding: 15px 18px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-message.success {
+  background: #edf7ef;
+  color: #426a4a;
+  border: 1px solid #c9dfcc;
+}
+
+.admin-message.error {
+  background: #fff0ec;
+  color: #9a4634;
+  border: 1px solid #e8c1b7;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.admin-card {
+  background: #fffaf2;
+
+  border: 1px solid #eadbc8;
+
+  border-radius: 18px;
+
+  padding: 30px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 12px 35px rgba(83, 58, 38, 0.08);
+}
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.admin-card-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #eadbc8;
+}
+
+.admin-card-heading > span:first-child {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eadbc8;
+
+  color: #6b4f3a;
+
+  font-size: 20px;
+
+  flex-shrink: 0;
+}
+
+.admin-card-heading h2 {
+  margin: 0 0 5px;
+
+  color: #4a3425;
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.admin-card-heading p {
+  margin: 0;
+
+  color: #8a7564;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.admin-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.admin-field.full {
+  grid-column: 1 / -1;
+}
+
+.admin-field label {
+  color: #594131;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.admin-field input,
+.admin-field textarea,
+.admin-field select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfccb7;
+
+  border-radius: 10px;
+
+  background: #fffdf8;
+
+  color: #4a3425;
+
+  padding: 13px 14px;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition: all 0.2s ease;
+}
+
+.admin-field input {
+  min-height: 47px;
+}
+
+.admin-field textarea {
+  min-height: 115px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.admin-field select {
+  min-height: 47px;
+
+  cursor: pointer;
+}
+
+.admin-field input::placeholder,
+.admin-field textarea::placeholder {
+  color: #b09c89;
+}
+
+.admin-field input:hover,
+.admin-field textarea:hover,
+.admin-field select:hover {
+  border-color: #c9ae92;
+}
+
+.admin-field input:focus,
+.admin-field textarea:focus,
+.admin-field select:focus {
+  border-color: #8a674d;
+
+  background: #fffdf9;
+
+  box-shadow:
+    0 0 0 4px rgba(138, 103, 77, 0.12);
+}
+
+/* =========================================================
+   PUBLISH
+   ========================================================= */
+
+.publish-field {
+  justify-content: flex-end;
+}
+
+.publish-label {
+  min-height: 47px;
+
+  display: flex !important;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dfccb7;
+
+  border-radius: 10px;
+
+  background: #fffdf8;
+
+  color: #594131 !important;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.publish-label:hover {
+  border-color: #c9ae92;
+
+  background: #fbf4ea;
+}
+
+.publish-label input {
+  width: 17px !important;
+  height: 17px;
+
+  min-height: unset !important;
+
+  accent-color: #6b4f3a;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   QUESTIONS HEADING
+   ========================================================= */
+
+.question-heading {
+  position: relative;
+}
+
+.question-heading > div:first-child span {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eadbc8;
+
+  color: #6b4f3a;
+
+  font-size: 19px;
+}
+
+.question-heading > div:nth-child(2) {
+  flex: 1;
+}
+
+.question-count {
+  margin-left: auto;
+
+  background: #f1e5d6;
+
+  color: #6b4f3a;
+
+  border: 1px solid #dfc9b0;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px !important;
+  font-weight: 750 !important;
+
+  letter-spacing: 0 !important;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   QUESTIONS WRAPPER
+   ========================================================= */
+
+.questions-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+/* =========================================================
+   QUESTION CARD
+   ========================================================= */
+
+.admin-question-card {
+  background: #fcf7ef;
+
+  border: 1px solid #e5d6c4;
+
+  border-radius: 15px;
+
+  padding: 23px;
+
+  transition: all 0.2s ease;
+}
+
+.admin-question-card:hover {
+  border-color: #cdb395;
+
+  box-shadow:
+    0 8px 25px rgba(83, 58, 38, 0.06);
+}
+
+/* =========================================================
+   QUESTION TOP
+   ========================================================= */
+
+.question-card-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.question-card-top h3 {
+  margin: 0;
+
+  color: #4a3425;
+
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.remove-question {
+  border: 0;
+
+  background: #fff0eb;
+
+  color: #a34b3b;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.remove-question:hover {
+  background: #fbe0d9;
+
+  color: #8e3c2e;
+}
+
+/* =========================================================
+   QUESTION TEXTAREA
+   ========================================================= */
+
+.admin-question-card > .admin-field {
+  margin-bottom: 20px;
+}
+
+.admin-question-card > .admin-field textarea {
+  min-height: 95px;
+
+  background: #fffdf9;
+}
+
+/* =========================================================
+   OPTIONS
+   ========================================================= */
+
+.options-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 22px;
+}
+
+.admin-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.option-label {
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eadbc8;
+
+  color: #6b4f3a;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.admin-option input {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfccb7;
+
+  border-radius: 9px;
+
+  background: #fffdf9;
+
+  color: #4a3425;
+
+  padding: 0 12px;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+.admin-option input::placeholder {
+  color: #b09c89;
+}
+
+.admin-option input:hover {
+  border-color: #c9ae92;
+}
+
+.admin-option input:focus {
+  border-color: #8a674d;
+
+  box-shadow:
+    0 0 0 4px rgba(138, 103, 77, 0.1);
+}
+
+/* =========================================================
+   QUESTION SETTINGS
+   ========================================================= */
+
+.question-settings {
+  display: grid;
+
+  grid-template-columns: 1fr 180px;
+
+  gap: 18px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e5d6c4;
+}
+
+.question-settings .admin-field input,
+.question-settings .admin-field select {
+  background: #fffdf9;
+}
+
+/* =========================================================
+   ADD QUESTION BUTTON
+   ========================================================= */
+
+.add-question-btn {
+  margin-top: 22px;
+
+  width: 100%;
+  min-height: 50px;
+
+  border: 1.5px dashed #c5a98b;
+
+  border-radius: 11px;
+
+  background: #fbf3e8;
+
+  color: #6b4f3a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.add-question-btn:hover {
+  background: #f2e5d5;
+
+  border-color: #9f7958;
+
+  color: #4a3425;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SUBMIT AREA
+   ========================================================= */
+
+.admin-submit-area {
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 5px;
+}
+
+.cancel-btn,
+.create-quiz-btn {
+  min-height: 49px;
+
+  padding: 0 22px;
+
+  border-radius: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.cancel-btn {
+  border: 1px solid #d8c5b1;
+
+  background: #fffaf2;
+
+  color: #67513f;
+}
+
+.cancel-btn:hover {
+  background: #f3e7d9;
+
+  border-color: #c4a88c;
+
+  color: #4a3425;
+}
+
+/* =========================================================
+   CREATE BUTTON
+   ========================================================= */
+
+.create-quiz-btn {
+  border: 1px solid #5b4030;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6b4f3a,
+      #4f3728
+    );
+
+  color: #fffaf2;
+
+  box-shadow:
+    0 8px 20px rgba(82, 57, 38, 0.22);
+}
+
+.create-quiz-btn:hover:not(:disabled) {
+  background:
+    linear-gradient(
+      135deg,
+      #795a42,
+      #5b4030
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(82, 57, 38, 0.28);
+}
+
+.create-quiz-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.create-quiz-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.admin-quiz-page ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-quiz-page ::-webkit-scrollbar-track {
+  background: #f1e8dc;
+}
+
+.admin-quiz-page ::-webkit-scrollbar-thumb {
+  background: #b99d80;
+
+  border-radius: 20px;
+}
+
+.admin-quiz-page ::-webkit-scrollbar-thumb:hover {
+  background: #94775c;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-quiz-header {
+    padding: 30px 5%;
+  }
+
+  .admin-quiz-header h1 {
+    font-size: 32px;
+  }
+
+  .admin-quiz-container {
+    width: min(94%, 900px);
+  }
+
+  .admin-card {
+    padding: 24px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-quiz-page {
+    padding-bottom: 40px;
+  }
+
+  .admin-quiz-header {
+    min-height: 210px;
+
+    padding: 25px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .admin-quiz-header h1 {
+    font-size: 28px;
+  }
+
+  .admin-quiz-header span {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .admin-quiz-container {
+    width: calc(100% - 24px);
+
+    margin-top: -25px;
+  }
+
+  .admin-card {
+    padding: 18px;
+
+    border-radius: 14px;
+
+    margin-bottom: 18px;
+  }
+
+  .admin-card-heading {
+    gap: 11px;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 18px;
+  }
+
+  .admin-card-heading > span:first-child,
+  .question-heading > div:first-child span {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .admin-card-heading h2 {
+    font-size: 18px;
+  }
+
+  .admin-card-heading p {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 17px;
+  }
+
+  .admin-field.full {
+    grid-column: auto;
+  }
+
+  .question-heading {
+    flex-wrap: wrap;
+  }
+
+  .question-count {
+    margin-left: auto;
+  }
+
+  .admin-question-card {
+    padding: 16px;
+
+    border-radius: 12px;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+
+    gap: 11px;
+  }
+
+  .question-settings {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .admin-submit-area {
+    flex-direction: column-reverse;
+
+    width: 100%;
+  }
+
+  .cancel-btn,
+  .create-quiz-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .admin-quiz-header {
+    padding: 22px 15px;
+  }
+
+  .admin-quiz-header h1 {
+    font-size: 24px;
+  }
+
+  .admin-quiz-container {
+    width: calc(100% - 16px);
+  }
+
+  .admin-card {
+    padding: 15px;
+  }
+
+  .question-card-top {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .question-card-top h3 {
+    font-size: 15px;
+  }
+
+  .remove-question {
+    padding: 7px 9px;
+
+    font-size: 11px;
+  }
+
+  .question-count {
+    font-size: 11px !important;
+
+    padding: 7px 10px;
+  }
+
+  .admin-field input,
+  .admin-field select {
+    min-height: 44px;
+  }
+
+  .admin-field textarea {
+    min-height: 100px;
+  }
+
+  .admin-back-btn {
+    padding: 10px 14px;
+
+    font-size: 13px;
+  }
+}
